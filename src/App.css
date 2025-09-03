@@ -9,11 +9,18 @@
   background-color: #222;
   color: white;
   padding: 10px 20px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-buttons a {
@@ -31,6 +38,7 @@
   padding: 20px;
   padding-bottom: 60px; /* space for footer */
 }
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -53,4 +61,30 @@
 
 .footer p:hover {
   color: #ff6347; /* Tomato hover effect */
+}
+
+/* ✅ Mobile Compatibility */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-buttons {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .nav-buttons a {
+    margin: 5px 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
 }
