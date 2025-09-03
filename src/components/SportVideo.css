@@ -1,0 +1,135 @@
+.wrapper {
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-left {
+  width: 100%;
+  max-width: 500px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.card-right {
+  flex: 1;
+  min-width: 280px;
+  padding-top: 10px;
+}
+
+/* Title styling */
+.video-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e90ff; /* Dodger Blue */
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.video-title:hover {
+  color: #ff6347; /* Tomato */
+}
+
+/* Description styling */
+.video-description {
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.video-description li {
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.video-description li:hover {
+  color: #555;
+}
+
+/* Download link styling */
+.download-link {
+  font-size: 16px;
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.download-link:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/* Thumbnail wrapper */
+.thumbnail-wrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 12px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-left,
+  .card-right {
+    width: 100%;
+    margin: 0;
+  }
+
+  .thumbnail,
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
