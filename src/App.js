@@ -23,6 +23,9 @@ export default function App() {
             <Route path="/sportvideo" element={<SportVideo />} />
           </Routes>
         </main>
+        <footer className="footer">
+  <p>© 2025 PC Game Hub. Built for clarity, speed, and elegance.</p>
+</footer>
       </div>
     </Router>
   );
