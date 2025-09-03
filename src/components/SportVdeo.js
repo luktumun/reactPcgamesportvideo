@@ -27,6 +27,9 @@ export default function SportVideo() {
     const id = extractYouTubeId(url);
     return id ? `https://www.youtube.com/embed/${id}?autoplay=1&mute=1` : null;
   };
+  const getDesc = (description)=> {
+    return description?.split('\n').filter(line => line.trim()) ?? [];
+  }
 
   return (
     <div className="wrapper">
@@ -66,16 +69,20 @@ export default function SportVideo() {
 
             <div className="card-right">
               <ul className="video-description">
-                {video.description?.split('.').map((sentence, index) =>
+                {getDesc(video.description)?.map((sentence, index) =>
                   sentence.trim() ? <li key={index}>{sentence.trim()}</li> : null
                 )}
               </ul>
-              {video.subtitle && <p><strong>Subtitle:</strong> {video.subtitle}</p>}
-              {video.mediacontent && <p><strong>Media:</strong> {video.mediacontent}</p>}
+           
               {video.torrentdownloadlink && (
+                <ul>
                 <a href={video.torrentdownloadlink} target="_blank" rel="noopener noreferrer" className="download-link">
-                  Download Torrent
+                📥 Download from Dropbox
                 </a>
+                <a href={video.torrentdownloadlink} target="_blank" rel="noopener noreferrer" className="download-link">
+                🧲 Open Magnet Link
+                </a>
+                </ul>
               )}
             </div>
           </div>

@@ -84,10 +84,10 @@
 }
 
 .thumbnail {
-  width: 100%;
-  height: auto;
+  width: 500;
+  height: 300;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 0px;
 }
 
 .play-icon {
@@ -97,7 +97,6 @@
   transform: translate(-50%, -50%);
   font-size: 50px;
   color: white;
-  background: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   padding: 12px;
 }

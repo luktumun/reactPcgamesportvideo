@@ -27,6 +27,9 @@ export default function PcGame() {
     const id = extractYouTubeId(url);
     return id ? `https://www.youtube.com/embed/${id}?autoplay=1&mute=1` : null;
   };
+  const getDesc = (description)=> {
+    return description?.split('\n').filter(line => line.trim()) ?? [];
+  }
 
   return (
     <div className="wrapper">
@@ -66,14 +69,19 @@ export default function PcGame() {
 
             <div className="card-right">
               <ul className="video-description">
-                {game.description?.split('.').map((sentence, index) =>
+                {getDesc(game.description)?.map((sentence, index) =>
                   sentence.trim() ? <li key={index}>{sentence.trim()}</li> : null
                 )}
               </ul>
               {game.url1 && (
+                <ul>
                 <a href={game.url1} target="_blank" rel="noopener noreferrer" className="download-link">
-                  Download Torrent
+                📥 Download from Dropbox
                 </a>
+                 <a href={game.url1} target="_blank" rel="noopener noreferrer" className="download-link">
+                 🧲 Open Magnet Link
+               </a>
+               </ul>
               )}
             </div>
           </div>
